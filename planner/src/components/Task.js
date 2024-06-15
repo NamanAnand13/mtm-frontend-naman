@@ -15,7 +15,7 @@ const Task = ({ task, deleteTask, updateTask }) => {
   };
 
   return (
-    <li>
+    <li className="task-item">
       {editMode ? (
         <div>
           <input 
@@ -23,13 +23,15 @@ const Task = ({ task, deleteTask, updateTask }) => {
             value={editedTask} 
             onChange={(e) => setEditedTask(e.target.value)} 
           />
-          <button onClick={handleSave}>Save</button>
+          <button className="btn edit-btn" onClick={handleSave}>Save</button>
         </div>
       ) : (
         <div>
           <span>{task.description}</span>
-          <button onClick={handleEdit}>Edit</button>
-          <button onClick={() => deleteTask(task.id)}>Delete</button>
+          <div className="task-actions">
+            <button className="btn edit-btn" onClick={handleEdit}>Edit</button>
+            <button className="btn delete-btn" onClick={() => deleteTask(task.id)}>Delete</button>
+          </div>
         </div>
       )}
     </li>

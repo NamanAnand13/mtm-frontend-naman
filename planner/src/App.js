@@ -2,11 +2,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import TaskInput from './components/TaskInput';
-import Task from './components/Task';
 import TaskList from './components/TaskList';
+
 
 function App() {
   const [tasks, setTasks] = useState([]);
+
   const addTask = (taskDescription) => {
     const newTask = {
       id: Math.random().toString(),
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
+        <img src='mtm_logo.jpeg' className='logo'></img>
         <h1>Itinerary Planner</h1>
         <TaskInput addTask={addTask} />
         <TaskList tasks={tasks} deleteTask={deleteTask} updateTask={updateTask} />
