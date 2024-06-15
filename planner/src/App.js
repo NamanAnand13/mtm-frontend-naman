@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+// App.js
+import React, { useState } from 'react';
 import './App.css';
+import TaskInput from './components/TaskInput';
+import Task from './components/Task';
+import TaskList from './components/TaskList';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const addTask = (taskDescription) => {
+    const newTask = {
+      id: Math.random().toString(),
+      description: taskDescription,
+    };
+    setTasks([...tasks, newTask]);
+  };
+
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter((task) => task.id !== taskId));
+  };
+
+  const updateTask = (taskId, newDescription) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === taskId ? { ...task, description: newDescription } : task
+      )
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <h1>Itinerary Planner</h1>
+        <TaskInput addTask={addTask} />
+        <TaskList tasks={tasks} deleteTask={deleteTask} updateTask={updateTask} />
+      </div>
     </div>
   );
 }
