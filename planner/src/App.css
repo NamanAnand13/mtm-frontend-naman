@@ -1,27 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #879dcc;
-  color: #879DCC;
-  margin: 0;
-  padding: 0;
+  background-color: #1373D4;
+  color: #ffffff;
+  overflow: hidden;
+  /* font-family: Arial, sans-serif; */
+}
+
+.forum-regular {
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.App {
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  color: #fff;
   height: 100vh;
+  width: 100vw;
+  /* text-align: center;
+  padding: 20px; */
 }
 
 .container {
-  max-width: 600px;
-  width: 100%;
+  /* max-width: 600px;
+  margin: 0 auto; */
+  /* background: #1373D4; */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  background-color: #2A2D70;
+  width: 500px;
+  max-width: 100%;
+  align-items: center;
 }
 
-.logo{
-  height: 100px;
+
+.dot {
+  background: #fff;
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
   border-radius: 50%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  /* width: 60px; */
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.logo-text::before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 60px;
+  background-color: #fff;
+  margin-right: 10px;
 }
 
 .form {
@@ -29,53 +82,115 @@ body {
   margin-bottom: 20px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+footer a {
+  color: #FBC64D;
+}
+
+footer a:hover {
+  color: #258BFA;
+}
+
 .input-field {
   flex: 1;
   padding: 10px;
+  margin-right: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #333;
-  color: #8b0000;
+  background-color: #fff;
+  color: #2A2D70;
+  font-weight: bold;
   outline: none;
 }
 
 .input-field::placeholder {
-  color: #aaa;
+  color: #BFC7E6;
 }
 
 .input-field:focus {
-  border: 2px solid #4caf50;
+  border: 2px solid #4F5185;
 }
 
 .btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4caf50;
+  background-color: #2A2D70;
+  font-weight: bold;
   color: #fff;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #fff;
+  color: #2A2D70;
+  transition: all 0.3s;
 }
 
+/* TaskList styling */
 .task-list {
-  list-style-type: none;
-  padding: 0;
+  height: 350px;
+  overflow: scroll;
+  /* Internet Explorer and Edge */
+  /* scrollbar-width: none; */
+  /* Firefox */
 }
 
+ul.task-list {
+  list-style-type: circle;
+  list-style-position: outside;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 0.5em;
+  /* Adjust the width as needed */
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  /* Color of the scrollbar thumb */
+}
+
+/* Task styling */
 .task-item {
+  /* background-color: #fff; */
+  width: auto;
+  display: flex;
+  flex-direction: row;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #333;
   transition: background-color 0.3s;
 }
 
 .task-item:hover {
-  background-color: #444;
+  background-color: #1373D4;
 }
+
+.taskBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.task-content {
+  flex-grow: 1;
+  margin-right: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  /* overflow: scroll; */
+}
+
+/* 
+.task-content::-webkit-scrollbar {
+  display: none;
+} */
 
 .task-actions {
   display: flex;
@@ -84,14 +199,33 @@ body {
 
 .task-actions button {
   margin-left: 10px;
-  padding: 5px 10px;
+  padding: 8px 15px;
   border: none;
   border-radius: 3px;
-  background-color: #ff9800;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.task-actions button:hover {
+/* .task-actions button:hover {
   background-color: #e68a00;
+} */
+
+.task-actions button.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.task-actions button.delete-btn:hover {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+.task-actions button.edit-btn {
+  background-color: #EBB308;
+}
+
+.task-actions button.edit-btn:hover {
+  background-color: #CA8A04;
+  color: #fff;
 }
