@@ -5,7 +5,6 @@ MTM Planner is a simple project build by @NamanAnand13 as a part of assignment g
 It has the feature to Create ,Update ,Delete and View the tasks to the itinerary.
 
 ## Demo
-## Demo
 You can check out a live demo of the MTM Planner here: [Live Demo](https://mtm-planner-naman.netlify.app/)
 
 ## Features
