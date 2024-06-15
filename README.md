@@ -1,4 +1,4 @@
-# MTM Planner ()
+# MTM Planner
 
 ## Overview
 MTM Planner is a simple project build by @NamanAnand13 as a part of assignment given by MY TRIP MATES. 
